@@ -1,0 +1,649 @@
+/* ===== 全体の見た目 ===== */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Hiragino Kaku Gothic ProN", "Meiryo", sans-serif;
+  background-color: #f0f4f8;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: #1e5f8c;
+  color: white;
+  padding: 16px 20px;
+  text-align: center;
+  position: relative;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 24px;
+}
+
+.back-btn {
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(255, 255, 255, 0.15);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.back-btn:hover {
+  background-color: rgba(255, 255, 255, 0.28);
+}
+
+main {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 0 15px;
+}
+
+/* ===== カード共通スタイル ===== */
+.card {
+  background-color: white;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.card h2 {
+  margin-top: 0;
+  border-bottom: 2px solid #1e5f8c;
+  padding-bottom: 8px;
+  color: #1e5f8c;
+}
+
+/* ===== フォーム ===== */
+.form-row {
+  margin-bottom: 14px;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-row label {
+  font-weight: bold;
+  margin-bottom: 5px;
+  font-size: 14px;
+}
+
+.form-row input,
+.form-row textarea,
+.form-row select {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+  font-family: inherit;
+  background-color: white;
+}
+
+.form-row textarea {
+  resize: vertical;
+}
+
+button {
+  background-color: #1e5f8c;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #164a6e;
+}
+
+.form-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+#cancel-edit {
+  background-color: #888;
+}
+
+#cancel-edit:hover {
+  background-color: #6b6b6b;
+}
+
+/* ===== 統計 ===== */
+.stats-container {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.stats-box {
+  flex: 1;
+  min-width: 200px;
+}
+
+.stats-box h3 {
+  margin-bottom: 8px;
+  font-size: 15px;
+  color: #1e5f8c;
+}
+
+.stats-box ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.stats-box li {
+  display: flex;
+  justify-content: space-between;
+  padding: 6px 10px;
+  background-color: #f0f4f8;
+  border-radius: 5px;
+  margin-bottom: 5px;
+  font-size: 14px;
+}
+
+.stats-box li span.count {
+  font-weight: bold;
+  color: #1e5f8c;
+}
+
+.empty-message {
+  color: #888;
+  font-size: 14px;
+  padding: 6px 0;
+}
+
+/* ===== 釣果一覧 ===== */
+.catch-item {
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 12px 15px;
+  margin-bottom: 12px;
+  position: relative;
+}
+
+.catch-item h4 {
+  margin: 0 0 8px 0;
+  font-size: 16px;
+  color: #1e5f8c;
+}
+
+.catch-item p {
+  margin: 3px 0;
+  font-size: 14px;
+}
+
+.catch-item .memo {
+  color: #555;
+  white-space: pre-wrap;
+}
+
+.delete-btn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background-color: #d9534f;
+  padding: 5px 12px;
+  font-size: 13px;
+  border-radius: 5px;
+}
+
+.delete-btn:hover {
+  background-color: #b83430;
+}
+
+.item-actions {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  display: flex;
+  gap: 8px;
+}
+
+.item-actions button {
+  position: static;
+  padding: 5px 12px;
+  font-size: 13px;
+  border-radius: 5px;
+}
+
+.edit-btn {
+  background-color: #f0ad4e;
+}
+
+.edit-btn:hover {
+  background-color: #d9971e;
+}
+
+/* ===== 写真 ===== */
+.photo-preview {
+  margin-top: 8px;
+  max-width: 200px;
+  max-height: 200px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.catch-photo {
+  display: block;
+  max-width: 100%;
+  max-height: 300px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  object-fit: cover;
+}
+
+.weather-btn {
+  background-color: #2f8f5b;
+  padding: 5px 12px;
+  font-size: 13px;
+  border-radius: 5px;
+  margin-top: 8px;
+}
+
+.weather-btn:hover {
+  background-color: #24713f;
+}
+
+/* ===== 画面切り替え ===== */
+.screen {
+  animation: fadeIn 0.2s ease-in;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* ===== ホーム画面：釣り場の絞り込み検索欄 ===== */
+.spot-search-input {
+  margin-bottom: 8px;
+}
+
+.secondary-btn {
+  background-color: white;
+  color: #1e5f8c;
+  border: 1px solid #1e5f8c;
+  white-space: nowrap;
+}
+
+.secondary-btn:hover {
+  background-color: #eaf2f8;
+}
+
+/* ===== ホーム画面：3つの大きなカード ===== */
+.home-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.home-card {
+  background-color: white;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  border-left: 5px solid #1e5f8c;
+  text-align: center;
+}
+
+.home-card h3 {
+  margin: 0 0 8px 0;
+  font-size: 18px;
+  color: #1e5f8c;
+}
+
+.home-card p {
+  margin: 0 0 14px 0;
+  color: #555;
+  font-size: 14px;
+}
+
+.home-card button {
+  width: 100%;
+  padding: 12px;
+  font-size: 15px;
+}
+
+.home-card-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.home-card-buttons .secondary-btn {
+  padding: 12px;
+  font-size: 15px;
+}
+
+@media (min-width: 620px) {
+  .home-cards {
+    flex-direction: row;
+  }
+  .home-card {
+    flex: 1;
+  }
+}
+
+/* ===== 天気・海況画面：釣り場選択 ===== */
+.weather-select-row {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.weather-select-row select {
+  flex: 1;
+  min-width: 160px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+  background-color: white;
+}
+
+.weather-current-name {
+  margin: 12px 0 0 0;
+  font-weight: bold;
+  color: #1e5f8c;
+}
+
+/* ===== 釣果登録フォーム：釣り場選択 ===== */
+#location-select {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+  background-color: white;
+}
+
+.location-custom {
+  margin-top: 8px;
+}
+
+/* ===== 天気・海況予報カード ===== */
+.weather-loading,
+.weather-error {
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+.weather-loading {
+  background-color: #eef6fb;
+  color: #1e5f8c;
+}
+
+.weather-error {
+  background-color: #fbeaea;
+  color: #b83430;
+}
+
+.weather-days {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-top: 14px;
+}
+
+.weather-day-card {
+  border: 1px solid #dbe4ea;
+  border-radius: 10px;
+  padding: 14px 16px;
+  background-color: #fbfdfe;
+}
+
+.weather-day-card h3 {
+  margin: 0 0 10px 0;
+  color: #1e5f8c;
+  font-size: 16px;
+  border-bottom: 1px solid #dbe4ea;
+  padding-bottom: 6px;
+}
+
+.weather-groups {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.weather-group {
+  flex: 1;
+  min-width: 180px;
+}
+
+.weather-group h4 {
+  margin: 0 0 6px 0;
+  font-size: 13px;
+  color: #2f8f5b;
+}
+
+.weather-group ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.weather-group li {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  padding: 3px 0;
+  border-bottom: 1px dashed #e5e5e5;
+}
+
+.weather-group li:last-child {
+  border-bottom: none;
+}
+
+/* =========================================================
+   今日のおすすめ釣り場 TOP5（osusume.js が使用）
+   スマホ表示を基準にし、広い画面で調整する
+   ========================================================= */
+
+/* ヘッダー右上の「今の狙い目」お知らせ */
+.now-biting {
+  margin: 10px auto 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 6px 10px;
+  font-size: 12px;
+  background-color: rgba(255, 255, 255, 0.14);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 8px;
+  padding: 6px 10px;
+  max-width: 92%;
+}
+
+.now-biting .nb-label {
+  font-weight: bold;
+  opacity: 0.9;
+}
+
+.now-biting .nb-item {
+  white-space: nowrap;
+}
+
+.now-biting .nb-stars {
+  color: #ffd66b;
+  letter-spacing: 1px;
+}
+
+/* おすすめカード */
+#osusume-card h2 {
+  border-bottom-color: #2f8f5b;
+  color: #2f8f5b;
+}
+
+.osusume-updated {
+  margin: 0 0 12px 0;
+  font-size: 12px;
+  color: #888;
+}
+
+.osusume-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.osusume-empty {
+  color: #888;
+  font-size: 14px;
+}
+
+.osusume-item {
+  border: 1px solid #dbe4ea;
+  border-left: 5px solid #2f8f5b;
+  border-radius: 10px;
+  padding: 12px 14px;
+  background-color: #fbfdfe;
+}
+
+.osusume-head {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 4px 8px;
+}
+
+.osusume-rank {
+  font-weight: bold;
+  color: #2f8f5b;
+  font-size: 15px;
+  flex: 0 0 auto;
+}
+
+.osusume-name {
+  font-weight: bold;
+  font-size: 17px;
+  color: #1e5f8c;
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.osusume-meta {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  white-space: nowrap;
+}
+
+.osusume-stars {
+  color: #f0ad4e;
+  letter-spacing: 1px;
+  font-size: 15px;
+}
+
+.osusume-score {
+  font-size: 13px;
+  color: #666;
+}
+
+.osusume-omakase {
+  margin: 8px 0 4px 0;
+  font-size: 13px;
+  color: #2f8f5b;
+  background-color: #eef7f1;
+  border-radius: 6px;
+  padding: 4px 8px;
+  display: inline-block;
+}
+
+.osusume-fish {
+  margin: 6px 0;
+  font-size: 13px;
+  color: #555;
+}
+
+.osusume-reasons {
+  list-style: none;
+  margin: 6px 0 10px 0;
+  padding: 0;
+}
+
+.osusume-reasons li {
+  font-size: 13px;
+  padding: 2px 0;
+  line-height: 1.5;
+}
+
+.osusume-reasons li.p {
+  color: #2f6b45;
+}
+
+.osusume-reasons li.m {
+  color: #b06a2c;
+}
+
+.osusume-btns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.osusume-btns button {
+  flex: 1 1 auto;
+  min-width: 96px;
+  padding: 9px 10px;
+  font-size: 13px;
+  background-color: #2f8f5b;
+}
+
+.osusume-btns button:hover {
+  background-color: #24713f;
+}
+
+/* 釣果データの書き出し */
+.export-note {
+  font-size: 13px;
+  color: #555;
+  margin: 0 0 10px 0;
+}
+
+.export-note code {
+  background-color: #eef2f5;
+  padding: 1px 5px;
+  border-radius: 4px;
+  font-size: 12px;
+}
+
+.export-result {
+  font-size: 13px;
+  color: #2f6b45;
+  margin: 10px 0 0 0;
+  line-height: 1.5;
+}
+
+/* 広い画面 */
+@media (min-width: 700px) {
+  .now-biting {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    margin: 0;
+    justify-content: flex-end;
+    max-width: 46%;
+  }
+
+  .osusume-btns button {
+    flex: 0 1 auto;
+  }
+}

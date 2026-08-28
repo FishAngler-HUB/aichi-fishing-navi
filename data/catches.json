@@ -1,0 +1,12 @@
+{
+  "_comment": "最近の釣果メモ。ここに書いた釣果が『今日のおすすめ釣り場』の『釣果実績（35点）』に反映されます。31日より古い釣果は自動的に無視されます。書き方は data/catches.sample.json と data/README.md を参照。",
+  "_format": {
+    "spotId": "data/spots.json の id（数値）",
+    "species": "魚種名。data/fish.json の名前に合わせると理由文がきれいになります（合わなくても可）",
+    "date": "釣った日 YYYY-MM-DD",
+    "count": "その日その魚種の目安尾数（省略可・省略時は1）",
+    "source": "self=自分の釣行 / report=現地・SNS・知人などで確認した事実メモ（省略可）"
+  },
+  "updatedAt": "",
+  "catches": []
+}

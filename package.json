@@ -1,0 +1,15 @@
+{
+  "name": "tsuriba-osusume-navi",
+  "private": true,
+  "version": "1.0.0",
+  "description": "釣り情報ツール - 今日のおすすめ釣り場ナビ（サイト本体はビルド不要の静的HTML／ツールはローカル実行）",
+  "type": "commonjs",
+  "scripts": {
+    "fetch:forecast": "node tools/fetch-forecast.js",
+    "update:forecast": "node tools/update-forecast.js",
+    "dev": "node tools/dev-server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

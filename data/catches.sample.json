@@ -1,0 +1,12 @@
+{
+  "_comment": "catches.json の書き方サンプル。実際に使うときは、必要な行を data/catches.json の \"catches\": [ ... ] の中にコピーし、日付・釣り場・魚種を実際のものに直してください。このファイル自体はサイトから読み込まれません。",
+  "updatedAt": "2026-08-29",
+  "catches": [
+    { "spotId": 1, "species": "アジ", "date": "2026-08-28", "count": 15, "source": "self" },
+    { "spotId": 1, "species": "アジ", "date": "2026-08-26", "count": 8, "source": "report" },
+    { "spotId": 1, "species": "サバ", "date": "2026-08-27", "count": 5, "source": "report" },
+    { "spotId": 2, "species": "アオリイカ", "date": "2026-08-25", "count": 2, "source": "self" },
+    { "spotId": 13, "species": "クロダイ", "date": "2026-08-27", "count": 2, "source": "report" },
+    { "spotId": 22, "species": "シロギス", "date": "2026-08-24", "count": 20, "source": "self" }
+  ]
+}

@@ -1,0 +1,205 @@
+{
+  "_comment": "釣り場の一覧と特徴（下書き）。既存の script.js のスポットに、おすすめ判定用の特徴を足したものです。方角は8方位（北/北東/東/南東/南/南西/西/北西）。詳細は data/README.md を参照。",
+  "spots": [
+    {
+      "id": 1, "name": "豊浜漁港", "prefecture": "愛知県", "region": "南知多町", "areaGroup": "知多半島南部",
+      "latitude": 34.7055, "longitude": 136.9376, "anglersUrl": "https://anglers.jp/areas/771/catches",
+      "type": "漁港",
+      "targetFish": ["アジ", "サバ", "イワシ", "カサゴ", "メバル", "クロダイ", "アオリイカ", "タチウオ", "シロギス", "カワハギ", "サヨリ"],
+      "shelterWind": ["北", "北西", "北東"], "exposedWind": ["南", "南東", "南西"],
+      "maxWaveComfort": 1.0, "footing": "normal", "nightLight": true, "familyFriendly": true
+    },
+    {
+      "id": 2, "name": "師崎漁港", "prefecture": "愛知県", "region": "南知多町", "areaGroup": "知多半島南部",
+      "latitude": 34.549, "longitude": 136.756, "anglersUrl": "https://anglers.jp/areas/772/catches",
+      "type": "漁港",
+      "targetFish": ["アジ", "サバ", "イワシ", "カサゴ", "メバル", "クロダイ", "アオリイカ", "タチウオ", "青物", "カワハギ"],
+      "shelterWind": ["北", "北東", "東"], "exposedWind": ["南西", "西", "南"],
+      "maxWaveComfort": 1.0, "footing": "normal", "nightLight": true, "familyFriendly": true
+    },
+    {
+      "id": 3, "name": "冨具崎港", "prefecture": "愛知県", "region": "知多郡美浜町", "areaGroup": "知多半島西部",
+      "latitude": 34.635, "longitude": 136.875, "anglersUrl": "https://anglers.jp/areas/775/catches",
+      "type": "漁港",
+      "targetFish": ["アジ", "サバ", "イワシ", "カサゴ", "メバル", "クロダイ", "キビレ", "アオリイカ", "シロギス", "サヨリ"],
+      "shelterWind": ["東", "北東", "南東"], "exposedWind": ["西", "北西", "南西"],
+      "maxWaveComfort": 1.0, "footing": "normal", "nightLight": true, "familyFriendly": true
+    },
+    {
+      "id": 10, "name": "河和漁港", "prefecture": "愛知県", "region": "知多郡美浜町", "areaGroup": "知多半島西部",
+      "latitude": 34.766, "longitude": 136.905, "anglersUrl": "https://anglers.jp/areas/2773/catches",
+      "type": "漁港",
+      "targetFish": ["アジ", "サバ", "イワシ", "カサゴ", "クロダイ", "キビレ", "シーバス", "シロギス", "アオリイカ", "サヨリ"],
+      "shelterWind": ["東", "北東", "南東"], "exposedWind": ["西", "北西", "南西"],
+      "maxWaveComfort": 1.0, "footing": "normal", "nightLight": true, "familyFriendly": true
+    },
+    {
+      "id": 11, "name": "大野漁港", "prefecture": "愛知県", "region": "常滑市", "areaGroup": "知多半島西部",
+      "latitude": 34.883, "longitude": 136.827, "anglersUrl": "https://anglers.jp/areas/778/catches",
+      "type": "漁港",
+      "targetFish": ["アジ", "サバ", "イワシ", "カサゴ", "クロダイ", "キビレ", "シーバス", "シロギス", "アオリイカ", "タチウオ"],
+      "shelterWind": ["東", "北東", "南東"], "exposedWind": ["西", "北西", "南西"],
+      "maxWaveComfort": 1.0, "footing": "normal", "nightLight": true, "familyFriendly": true
+    },
+    {
+      "id": 13, "name": "形原漁港", "prefecture": "愛知県", "region": "蒲郡市", "areaGroup": "蒲郡方面",
+      "latitude": 34.807, "longitude": 137.183, "anglersUrl": "https://anglers.jp/areas/5335/catches",
+      "type": "漁港",
+      "targetFish": ["アジ", "サバ", "カサゴ", "メバル", "クロダイ", "キビレ", "アオリイカ", "タチウオ", "シロギス", "カワハギ"],
+      "shelterWind": ["北", "北西", "北東"], "exposedWind": ["南", "南東", "南西"],
+      "maxWaveComfort": 1.0, "footing": "normal", "nightLight": true, "familyFriendly": true
+    },
+    {
+      "id": 14, "name": "佐久島", "prefecture": "愛知県", "region": "西尾市（一色町）", "areaGroup": "西尾・幡豆方面",
+      "latitude": 34.716, "longitude": 137.007, "anglersUrl": "https://anglers.jp/areas/770/catches",
+      "type": "島",
+      "targetFish": ["アジ", "サバ", "カサゴ", "メバル", "クロダイ", "アオリイカ", "カワハギ", "タチウオ"],
+      "shelterWind": ["北", "北西"], "exposedWind": ["南", "南東", "南西"],
+      "maxWaveComfort": 1.1, "footing": "caution", "nightLight": false, "familyFriendly": false
+    },
+    {
+      "id": 15, "name": "日間賀島", "prefecture": "愛知県", "region": "知多郡南知多町", "areaGroup": "知多半島南部",
+      "latitude": 34.633, "longitude": 136.933, "anglersUrl": "https://anglers.jp/areas/768/catches",
+      "type": "島",
+      "targetFish": ["アジ", "サバ", "カサゴ", "メバル", "クロダイ", "アオリイカ", "カワハギ", "タチウオ", "青物"],
+      "shelterWind": ["北", "北西"], "exposedWind": ["南", "南東", "南西"],
+      "maxWaveComfort": 1.1, "footing": "normal", "nightLight": true, "familyFriendly": true
+    },
+    {
+      "id": 16, "name": "篠島", "prefecture": "愛知県", "region": "知多郡南知多町", "areaGroup": "知多半島南部",
+      "latitude": 34.617, "longitude": 136.977, "anglersUrl": "https://anglers.jp/areas/769/catches",
+      "type": "島",
+      "targetFish": ["アジ", "サバ", "カサゴ", "メバル", "クロダイ", "アオリイカ", "カワハギ", "青物", "タチウオ"],
+      "shelterWind": ["北", "北西"], "exposedWind": ["南", "南東", "南西"],
+      "maxWaveComfort": 1.1, "footing": "normal", "nightLight": true, "familyFriendly": true
+    },
+    {
+      "id": 17, "name": "片名漁港", "prefecture": "愛知県", "region": "知多郡南知多町", "areaGroup": "知多半島南部",
+      "latitude": 34.68, "longitude": 136.93, "anglersUrl": "https://anglers.jp/areas/773/catches",
+      "type": "漁港",
+      "targetFish": ["アジ", "サバ", "イワシ", "カサゴ", "メバル", "クロダイ", "アオリイカ", "タチウオ", "シロギス", "サヨリ"],
+      "shelterWind": ["北", "北西", "北東"], "exposedWind": ["南", "南東", "南西"],
+      "maxWaveComfort": 1.0, "footing": "normal", "nightLight": true, "familyFriendly": true
+    },
+    {
+      "id": 18, "name": "宮崎漁港（吉良サンライズパーク）", "prefecture": "愛知県", "region": "西尾市（吉良町）", "areaGroup": "西尾・幡豆方面",
+      "latitude": 34.783, "longitude": 137.10, "anglersUrl": "https://anglers.jp/areas/4163/catches",
+      "type": "海釣り公園",
+      "targetFish": ["アジ", "サバ", "カサゴ", "クロダイ", "キビレ", "シーバス", "シロギス", "アオリイカ", "サヨリ"],
+      "shelterWind": ["北", "北西", "北東"], "exposedWind": ["南", "南東", "南西"],
+      "maxWaveComfort": 1.1, "footing": "good", "nightLight": true, "familyFriendly": true
+    },
+    {
+      "id": 19, "name": "一色さかな広場前", "prefecture": "愛知県", "region": "西尾市（一色町）", "areaGroup": "西尾・幡豆方面",
+      "latitude": 34.777, "longitude": 136.988, "anglersUrl": "https://anglers.jp/areas/2775/catches",
+      "type": "堤防",
+      "targetFish": ["クロダイ", "キビレ", "シーバス", "カサゴ", "シロギス", "アジ", "サヨリ"],
+      "shelterWind": ["北", "北西", "北東"], "exposedWind": ["南", "南西", "南東"],
+      "maxWaveComfort": 0.9, "footing": "normal", "nightLight": false, "familyFriendly": true
+    },
+    {
+      "id": 20, "name": "爆釣美浜フィッシングパーク", "prefecture": "愛知県", "region": "知多郡美浜町", "areaGroup": "知多半島西部",
+      "latitude": 34.72, "longitude": 136.87, "anglersUrl": "https://anglers.jp/areas/4878/catches",
+      "type": "海釣り公園",
+      "targetFish": ["アジ", "サバ", "イワシ", "カサゴ", "クロダイ", "キビレ", "シロギス", "アオリイカ"],
+      "shelterWind": ["東", "北東", "南東"], "exposedWind": ["西", "北西", "南西"],
+      "maxWaveComfort": 1.0, "footing": "good", "nightLight": true, "familyFriendly": true
+    },
+    {
+      "id": 21, "name": "セントレア常滑港前島", "prefecture": "愛知県", "region": "常滑市", "areaGroup": "知多半島西部",
+      "latitude": 34.858, "longitude": 136.805, "anglersUrl": "https://anglers.jp/areas/777/catches",
+      "type": "堤防",
+      "targetFish": ["アジ", "サバ", "イワシ", "クロダイ", "キビレ", "シーバス", "カサゴ", "アオリイカ", "タチウオ", "シロギス"],
+      "shelterWind": ["東", "北東", "南東"], "exposedWind": ["西", "北西", "南西"],
+      "maxWaveComfort": 1.1, "footing": "normal", "nightLight": true, "familyFriendly": false
+    },
+    {
+      "id": 22, "name": "碧南海釣り公園", "prefecture": "愛知県", "region": "碧南市", "areaGroup": "碧南・高浜方面",
+      "latitude": 34.895, "longitude": 136.965, "anglersUrl": "https://anglers.jp/areas/3931/catches",
+      "type": "海釣り公園",
+      "targetFish": ["アジ", "サバ", "イワシ", "カサゴ", "クロダイ", "キビレ", "シーバス", "シロギス", "アオリイカ", "サヨリ", "カワハギ"],
+      "shelterWind": ["北", "北西", "北東"], "exposedWind": ["南", "南西", "南東"],
+      "maxWaveComfort": 1.1, "footing": "good", "nightLight": true, "familyFriendly": true
+    },
+    {
+      "id": 23, "name": "西浦", "prefecture": "愛知県", "region": "蒲郡市", "areaGroup": "蒲郡方面",
+      "latitude": 34.845, "longitude": 137.19, "anglersUrl": "https://anglers.jp/areas/764/catches",
+      "type": "堤防",
+      "targetFish": ["アジ", "サバ", "カサゴ", "メバル", "クロダイ", "アオリイカ", "タチウオ", "シロギス", "カワハギ"],
+      "shelterWind": ["北", "北西"], "exposedWind": ["南", "南東", "南西"],
+      "maxWaveComfort": 1.0, "footing": "normal", "nightLight": true, "familyFriendly": true
+    },
+    {
+      "id": 24, "name": "半田港", "prefecture": "愛知県", "region": "半田市", "areaGroup": "半田・武豊方面",
+      "latitude": 34.90, "longitude": 136.93, "anglersUrl": "https://anglers.jp/areas/4346/catches",
+      "type": "漁港",
+      "targetFish": ["クロダイ", "キビレ", "シーバス", "カサゴ", "シロギス", "アジ", "サヨリ"],
+      "shelterWind": ["北", "北西", "北東"], "exposedWind": ["南", "南西", "南東"],
+      "maxWaveComfort": 0.9, "footing": "normal", "nightLight": true, "familyFriendly": true
+    },
+    {
+      "id": 25, "name": "半田緑地公園", "prefecture": "愛知県", "region": "半田市", "areaGroup": "半田・武豊方面",
+      "latitude": 34.905, "longitude": 136.925, "anglersUrl": "https://anglers.jp/areas/761/catches",
+      "type": "海釣り公園",
+      "targetFish": ["クロダイ", "キビレ", "シーバス", "カサゴ", "シロギス", "アジ", "サヨリ"],
+      "shelterWind": ["北", "北西", "北東"], "exposedWind": ["南", "南西", "南東"],
+      "maxWaveComfort": 0.9, "footing": "good", "nightLight": false, "familyFriendly": true
+    },
+    {
+      "id": 26, "name": "武豊緑地", "prefecture": "愛知県", "region": "知多郡武豊町", "areaGroup": "半田・武豊方面",
+      "latitude": 34.87, "longitude": 136.91, "anglersUrl": "https://anglers.jp/areas/4091/catches",
+      "type": "海釣り公園",
+      "targetFish": ["クロダイ", "キビレ", "シーバス", "カサゴ", "シロギス", "アジ", "サヨリ", "アオリイカ"],
+      "shelterWind": ["東", "北東", "南東"], "exposedWind": ["西", "北西", "南西"],
+      "maxWaveComfort": 0.9, "footing": "good", "nightLight": false, "familyFriendly": true
+    },
+    {
+      "id": 27, "name": "伊良湖岬", "prefecture": "愛知県", "region": "田原市", "areaGroup": "田原方面",
+      "latitude": 34.60, "longitude": 137.00, "anglersUrl": "https://anglers.jp/areas/3150/catches",
+      "type": "磯",
+      "targetFish": ["アジ", "サバ", "青物", "アオリイカ", "クロダイ", "カサゴ", "タチウオ", "ヒラメ", "マゴチ"],
+      "shelterWind": ["北", "北東"], "exposedWind": ["南", "南西", "西", "南東"],
+      "maxWaveComfort": 1.4, "footing": "caution", "nightLight": false, "familyFriendly": false
+    },
+    {
+      "id": 28, "name": "伊良湖サーフ", "prefecture": "愛知県", "region": "田原市", "areaGroup": "田原方面",
+      "latitude": 34.605, "longitude": 137.02, "anglersUrl": "https://anglers.jp/areas/3151/catches",
+      "type": "サーフ",
+      "targetFish": ["シロギス", "マゴチ", "ヒラメ", "クロダイ", "アオリイカ", "青物"],
+      "shelterWind": ["北", "北東"], "exposedWind": ["南", "南西", "南東", "西"],
+      "maxWaveComfort": 1.6, "footing": "caution", "nightLight": false, "familyFriendly": false
+    },
+    {
+      "id": 29, "name": "田原サーフ", "prefecture": "愛知県", "region": "田原市", "areaGroup": "田原方面",
+      "latitude": 34.63, "longitude": 137.13, "anglersUrl": "https://anglers.jp/areas/3152/catches",
+      "type": "サーフ",
+      "targetFish": ["シロギス", "マゴチ", "ヒラメ", "クロダイ", "青物"],
+      "shelterWind": ["北", "北東"], "exposedWind": ["南", "南西", "南東", "西"],
+      "maxWaveComfort": 1.6, "footing": "caution", "nightLight": false, "familyFriendly": false
+    },
+    {
+      "id": 30, "name": "伊良湖港", "prefecture": "愛知県", "region": "田原市", "areaGroup": "田原方面",
+      "latitude": 34.598, "longitude": 137.003, "anglersUrl": "https://anglers.jp/areas/2779/catches",
+      "type": "漁港",
+      "targetFish": ["アジ", "サバ", "青物", "アオリイカ", "クロダイ", "カサゴ", "メバル", "タチウオ", "ヒラメ"],
+      "shelterWind": ["北", "北東", "東"], "exposedWind": ["南", "南西", "西"],
+      "maxWaveComfort": 1.1, "footing": "normal", "nightLight": true, "familyFriendly": true
+    },
+    {
+      "id": 31, "name": "田原湾", "prefecture": "愛知県", "region": "田原市", "areaGroup": "田原方面",
+      "latitude": 34.67, "longitude": 137.20, "anglersUrl": "https://anglers.jp/areas/766/catches",
+      "type": "堤防",
+      "targetFish": ["クロダイ", "キビレ", "シーバス", "シロギス", "カサゴ", "アジ", "サヨリ"],
+      "shelterWind": ["北", "北西", "北東"], "exposedWind": ["南", "南西", "南東"],
+      "maxWaveComfort": 0.9, "footing": "normal", "nightLight": false, "familyFriendly": true
+    },
+    {
+      "id": 32, "name": "赤羽根港", "prefecture": "愛知県", "region": "田原市", "areaGroup": "田原方面",
+      "latitude": 34.62, "longitude": 137.27, "anglersUrl": "https://anglers.jp/areas/1414/catches",
+      "type": "漁港",
+      "targetFish": ["シロギス", "マゴチ", "ヒラメ", "クロダイ", "アオリイカ", "青物", "カサゴ"],
+      "shelterWind": ["北", "北東"], "exposedWind": ["南", "南西", "南東", "西"],
+      "maxWaveComfort": 1.3, "footing": "normal", "nightLight": true, "familyFriendly": false
+    }
+  ]
+}

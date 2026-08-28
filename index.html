@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>釣り情報ツール</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <button type="button" id="back-btn" class="back-btn" style="display:none;">← ホームに戻る</button>
+    <h1>🎣 釣り情報ツール</h1>
+    <div id="now-biting" class="now-biting" style="display:none;"></div>
+  </header>
+
+  <main>
+
+    <!-- =========================================================
+         ホーム画面
+         ========================================================= -->
+    <section id="screen-home" class="screen">
+
+      <div class="card">
+        <h2>釣り場を選択</h2>
+
+        <div class="form-row">
+          <label for="area-select">① 地域を選択</label>
+          <select id="area-select">
+            <option value="">-- 地域を選択 --</option>
+          </select>
+        </div>
+
+        <div class="form-row" id="spot-select-wrap" style="display:none;">
+          <label for="spot-select">② 釣り場を選択</label>
+          <input type="text" id="spot-search-input" class="spot-search-input" placeholder="🔍 釣り場名で検索" style="display:none;">
+          <select id="spot-select"></select>
+        </div>
+
+        <p id="spot-select-empty" class="empty-message" style="display:none;">
+          登録された釣り場がありません。
+        </p>
+      </div>
+
+      <div class="card" id="osusume-card">
+        <h2>🏆 今日のおすすめ釣り場 TOP5</h2>
+
+        <div class="form-row">
+          <label for="osusume-fish-select">狙う魚</label>
+          <select id="osusume-fish-select">
+            <option value="">おまかせ（総合）</option>
+          </select>
+        </div>
+
+        <p id="osusume-updated" class="osusume-updated"></p>
+        <div id="osusume-list" class="osusume-list">
+          <p class="osusume-empty">読み込み中...</p>
+        </div>
+      </div>
+
+      <div class="home-cards">
+        <div class="home-card">
+          <h3>🎣 釣果を見る</h3>
+          <p>アングラーズで最新の釣果情報を見る</p>
+          <div class="home-card-buttons">
+            <button type="button" id="go-anglers-btn">アングラーズで釣果を見る</button>
+            <button type="button" id="go-map-btn" class="secondary-btn">🗺 地図を見る</button>
+          </div>
+        </div>
+
+        <div class="home-card">
+          <h3>🌊 天気・海況を見る</h3>
+          <p>選択した釣り場の天気・風・波・海水温を見る</p>
+          <button type="button" id="go-weather-btn">天気・海況を見る</button>
+        </div>
+
+        <div class="home-card">
+          <h3>📝 釣果を記録する</h3>
+          <p>自分の釣果を記録・管理する</p>
+          <button type="button" id="go-record-btn">釣果を記録する</button>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- =========================================================
+         天気・海況予報画面
+         ========================================================= -->
+    <section id="screen-weather" class="screen" style="display:none;">
+
+      <div class="card">
+        <h2>🌤 天気・海況予報</h2>
+
+        <div class="form-row">
+          <label for="weather-spot-select">釣り場</label>
+          <div class="weather-select-row">
+            <select id="weather-spot-select"></select>
+            <button type="button" id="weather-fetch-btn">天気・海況を見る</button>
+          </div>
+        </div>
+
+        <p id="weather-current-name" class="weather-current-name"></p>
+
+        <div id="weather-result"></div>
+      </div>
+
+    </section>
+
+    <!-- =========================================================
+         釣果記録画面（登録フォーム・統計・一覧）
+         ========================================================= -->
+    <section id="screen-record" class="screen" style="display:none;">
+
+      <div class="card">
+        <h2 id="form-title">釣果を登録する</h2>
+        <form id="catch-form">
+          <div class="form-row">
+            <label for="species">魚種</label>
+            <input type="text" id="species" placeholder="例：アジ" required>
+          </div>
+
+          <div class="form-row">
+            <label for="location-select">釣った場所</label>
+            <select id="location-select">
+              <option value="">-- 釣り場を選択 --</option>
+              <option value="__custom__">その他（自由入力）</option>
+            </select>
+            <input type="text" id="location-custom" class="location-custom" placeholder="場所を入力" style="display:none;">
+          </div>
+
+          <div class="form-row">
+            <label for="date">釣った日</label>
+            <input type="date" id="date" required>
+          </div>
+
+          <div class="form-row">
+            <label for="size">サイズ（cm）</label>
+            <input type="number" id="size" step="0.1" min="0" placeholder="例：25">
+          </div>
+
+          <div class="form-row">
+            <label for="lure">使用したルアー・仕掛け</label>
+            <input type="text" id="lure" placeholder="例：ワーム、サビキ">
+          </div>
+
+          <div class="form-row">
+            <label for="memo">メモ</label>
+            <textarea id="memo" rows="3" placeholder="天気、潮回り、気づいたことなど"></textarea>
+          </div>
+
+          <div class="form-row">
+            <label for="photo">写真</label>
+            <input type="file" id="photo" accept="image/*">
+            <img id="photo-preview" class="photo-preview" style="display:none;">
+          </div>
+
+          <input type="hidden" id="latitude">
+          <input type="hidden" id="longitude">
+          <input type="hidden" id="spot-id">
+
+          <div class="form-buttons">
+            <button type="submit" id="submit-btn">登録する</button>
+            <button type="button" id="cancel-edit" style="display:none;">キャンセル</button>
+          </div>
+        </form>
+      </div>
+
+      <div class="card">
+        <h2>統計</h2>
+        <div class="stats-container">
+          <div class="stats-box">
+            <h3>魚種別 釣果数</h3>
+            <ul id="species-stats"></ul>
+          </div>
+          <div class="stats-box">
+            <h3>釣り場別 釣果数</h3>
+            <ul id="location-stats"></ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>釣果一覧</h2>
+        <div id="catch-list"></div>
+      </div>
+
+      <div class="card" id="catch-export-card">
+        <h2>釣果データの書き出し</h2>
+        <p class="export-note">
+          この端末に記録した釣果を、「今日のおすすめ」の釣果実績に使う
+          <code>data/catches.json</code> へ取り込める形式で書き出します。
+        </p>
+        <button type="button" id="catch-export-btn">この端末の釣果をJSONで書き出す</button>
+        <p id="catch-export-result" class="export-result"></p>
+      </div>
+
+    </section>
+
+  </main>
+
+  <script src="script.js"></script>
+  <script src="osusume.js"></script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+{
+  "_comment": "おすすめ度の配点と、釣果の『新しさ』の重み。数値を変えると判定結果が変わります。合計は自動で0〜100に調整されます。",
+  "weights": {
+    "catch": 35,
+    "season": 25,
+    "condition": 30,
+    "ease": 10
+  },
+  "recencyDecay": [
+    { "maxAgeDays": 1, "factor": 1.0 },
+    { "maxAgeDays": 3, "factor": 0.8 },
+    { "maxAgeDays": 7, "factor": 0.55 },
+    { "maxAgeDays": 14, "factor": 0.3 },
+    { "maxAgeDays": 30, "factor": 0.12 }
+  ],
+  "noCatchDataScore": 6
+}

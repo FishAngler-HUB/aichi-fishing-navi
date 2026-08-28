@@ -1,0 +1,23 @@
+# ===== ログ =====
+tools/fetch.log
+*.log
+
+# ===== 一時ファイル・バックアップ =====
+*.tmp
+*.bak
+data/forecast.json.tmp
+data/forecast.json.bak
+catches-export.json
+
+# ===== Node =====
+node_modules/
+
+# ===== 秘密情報（現在は未使用。予防的に除外） =====
+.env
+.env.*
+
+# ===== OS / エディタ =====
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/

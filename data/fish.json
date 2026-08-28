@@ -1,0 +1,165 @@
+{
+  "_comment": "魚種ごとの生態データ（下書き）。旬の月・ベイト・適水温・風波の許容などを手で調整できます。詳細は data/README.md を参照。",
+  "fish": {
+    "アジ": {
+      "seasonMonths": { "best": [5, 6, 7, 8, 9, 10, 11], "ok": [4, 12] },
+      "bait": { "春": "バチ・アミ・稚魚", "夏": "アミ・小魚", "秋": "小魚（イワシ稚魚など）", "冬": "アミ・プランクトン" },
+      "water": { "tempMin": 15, "tempMax": 27 },
+      "windMaxComfort": 6,
+      "waveMaxComfort": 1.0,
+      "prefersMazume": true,
+      "prefersNightLight": true,
+      "spotTypes": ["漁港", "堤防", "海釣り公園"]
+    },
+    "サバ": {
+      "seasonMonths": { "best": [6, 7, 8, 9, 10], "ok": [5, 11] },
+      "bait": { "春": "アミ・小魚", "夏": "イワシ・小魚", "秋": "イワシ・小魚", "冬": "小魚" },
+      "water": { "tempMin": 17, "tempMax": 27 },
+      "windMaxComfort": 7,
+      "waveMaxComfort": 1.2,
+      "prefersMazume": true,
+      "prefersNightLight": false,
+      "spotTypes": ["漁港", "堤防"]
+    },
+    "イワシ": {
+      "seasonMonths": { "best": [5, 6, 7, 8, 9, 10], "ok": [4, 11] },
+      "bait": { "春": "プランクトン", "夏": "プランクトン", "秋": "プランクトン", "冬": "プランクトン" },
+      "water": { "tempMin": 15, "tempMax": 26 },
+      "windMaxComfort": 6,
+      "waveMaxComfort": 1.0,
+      "prefersMazume": true,
+      "prefersNightLight": true,
+      "spotTypes": ["漁港", "堤防"]
+    },
+    "カサゴ": {
+      "seasonMonths": { "best": [10, 11, 12, 1, 2, 3, 4], "ok": [5, 9] },
+      "bait": { "春": "小魚・エビ・ゴカイ", "夏": "小魚・甲殻類", "秋": "小魚・甲殻類", "冬": "小魚・エビ" },
+      "water": { "tempMin": 8, "tempMax": 24 },
+      "windMaxComfort": 8,
+      "waveMaxComfort": 1.3,
+      "prefersMazume": false,
+      "prefersNightLight": true,
+      "spotTypes": ["漁港", "堤防", "磯"]
+    },
+    "メバル": {
+      "seasonMonths": { "best": [11, 12, 1, 2, 3, 4], "ok": [10, 5] },
+      "bait": { "春": "バチ・稚魚・アミ", "夏": "小魚・アミ", "秋": "小魚・アミ", "冬": "アミ・稚魚" },
+      "water": { "tempMin": 8, "tempMax": 20 },
+      "windMaxComfort": 5,
+      "waveMaxComfort": 0.8,
+      "prefersMazume": true,
+      "prefersNightLight": true,
+      "spotTypes": ["漁港", "堤防", "磯"]
+    },
+    "クロダイ": {
+      "seasonMonths": { "best": [4, 5, 6, 9, 10, 11], "ok": [3, 7, 8, 12] },
+      "bait": { "春": "バチ・カニ・イガイ・コーン", "夏": "カニ・イガイ・小魚", "秋": "イガイ・カニ・小魚", "冬": "カニ・エビ" },
+      "water": { "tempMin": 12, "tempMax": 27 },
+      "windMaxComfort": 7,
+      "waveMaxComfort": 1.2,
+      "prefersMazume": true,
+      "prefersNightLight": false,
+      "spotTypes": ["漁港", "堤防", "サーフ", "磯", "海釣り公園"]
+    },
+    "キビレ": {
+      "seasonMonths": { "best": [5, 6, 7, 8, 9, 10, 11], "ok": [4, 12] },
+      "bait": { "春": "ゴカイ・カニ", "夏": "カニ・小魚・ゴカイ", "秋": "カニ・小魚", "冬": "ゴカイ・エビ" },
+      "water": { "tempMin": 13, "tempMax": 28 },
+      "windMaxComfort": 7,
+      "waveMaxComfort": 1.2,
+      "prefersMazume": true,
+      "prefersNightLight": false,
+      "spotTypes": ["漁港", "堤防", "河口", "海釣り公園"]
+    },
+    "シーバス": {
+      "seasonMonths": { "best": [4, 5, 6, 9, 10, 11], "ok": [3, 7, 8, 12] },
+      "bait": { "春": "バチ・稚アユ・ハク", "夏": "イワシ・小魚・イナッコ", "秋": "イワシ・サッパ・コノシロ", "冬": "小型ベイト・バチ" },
+      "water": { "tempMin": 10, "tempMax": 26 },
+      "windMaxComfort": 7,
+      "waveMaxComfort": 1.3,
+      "prefersMazume": true,
+      "prefersNightLight": true,
+      "spotTypes": ["漁港", "堤防", "サーフ", "河口"]
+    },
+    "シロギス": {
+      "seasonMonths": { "best": [5, 6, 7, 8, 9, 10], "ok": [4, 11] },
+      "bait": { "春": "ジャリメ・ゴカイ", "夏": "ジャリメ・イソメ", "秋": "ジャリメ・イソメ", "冬": "イソメ" },
+      "water": { "tempMin": 16, "tempMax": 27 },
+      "windMaxComfort": 6,
+      "waveMaxComfort": 1.0,
+      "prefersMazume": false,
+      "prefersNightLight": false,
+      "spotTypes": ["サーフ", "漁港", "堤防"]
+    },
+    "マゴチ": {
+      "seasonMonths": { "best": [5, 6, 7, 8, 9], "ok": [4, 10] },
+      "bait": { "春": "小魚・ハゼ", "夏": "イワシ・キス・小魚", "秋": "小魚・キス", "冬": "小魚" },
+      "water": { "tempMin": 17, "tempMax": 27 },
+      "windMaxComfort": 7,
+      "waveMaxComfort": 1.3,
+      "prefersMazume": true,
+      "prefersNightLight": false,
+      "spotTypes": ["サーフ", "漁港", "河口"]
+    },
+    "ヒラメ": {
+      "seasonMonths": { "best": [10, 11, 12, 1, 4, 5], "ok": [2, 3, 9] },
+      "bait": { "春": "イワシ・小魚", "夏": "小魚", "秋": "イワシ・小魚（落ちアユ）", "冬": "イワシ・小魚" },
+      "water": { "tempMin": 10, "tempMax": 23 },
+      "windMaxComfort": 8,
+      "waveMaxComfort": 1.6,
+      "prefersMazume": true,
+      "prefersNightLight": false,
+      "spotTypes": ["サーフ", "漁港", "堤防"]
+    },
+    "アオリイカ": {
+      "seasonMonths": { "best": [4, 5, 6, 9, 10, 11], "ok": [3, 7, 12] },
+      "bait": { "春": "アジ・小魚（大型・親イカ）", "夏": "小魚（新子は夏後半から）", "秋": "アジ・小魚（新子〜若イカ）", "冬": "小魚（深場）" },
+      "water": { "tempMin": 15, "tempMax": 26 },
+      "windMaxComfort": 6,
+      "waveMaxComfort": 1.0,
+      "prefersMazume": true,
+      "prefersNightLight": true,
+      "spotTypes": ["漁港", "堤防", "磯", "島"]
+    },
+    "タチウオ": {
+      "seasonMonths": { "best": [7, 8, 9, 10, 11], "ok": [6, 12] },
+      "bait": { "春": "小魚", "夏": "イワシ・小魚", "秋": "イワシ・サッパ・小魚", "冬": "小魚" },
+      "water": { "tempMin": 17, "tempMax": 27 },
+      "windMaxComfort": 6,
+      "waveMaxComfort": 1.0,
+      "prefersMazume": true,
+      "prefersNightLight": true,
+      "spotTypes": ["漁港", "堤防"]
+    },
+    "カワハギ": {
+      "seasonMonths": { "best": [9, 10, 11, 12], "ok": [7, 8, 1] },
+      "bait": { "春": "アサリ・ゴカイ", "夏": "アサリ・イソメ", "秋": "アサリ・イソメ", "冬": "アサリ" },
+      "water": { "tempMin": 12, "tempMax": 26 },
+      "windMaxComfort": 6,
+      "waveMaxComfort": 0.9,
+      "prefersMazume": false,
+      "prefersNightLight": false,
+      "spotTypes": ["漁港", "堤防", "磯"]
+    },
+    "サヨリ": {
+      "seasonMonths": { "best": [9, 10, 11, 12], "ok": [3, 4, 8] },
+      "bait": { "春": "アミ・プランクトン", "夏": "アミ", "秋": "アミ・サシアミ", "冬": "アミ" },
+      "water": { "tempMin": 12, "tempMax": 24 },
+      "windMaxComfort": 5,
+      "waveMaxComfort": 0.7,
+      "prefersMazume": true,
+      "prefersNightLight": false,
+      "spotTypes": ["漁港", "堤防"]
+    },
+    "青物": {
+      "seasonMonths": { "best": [7, 8, 9, 10, 11], "ok": [6, 12] },
+      "bait": { "春": "小魚", "夏": "イワシ・小魚", "秋": "イワシ・サッパ・小魚", "冬": "小魚" },
+      "water": { "tempMin": 17, "tempMax": 27 },
+      "windMaxComfort": 8,
+      "waveMaxComfort": 1.5,
+      "prefersMazume": true,
+      "prefersNightLight": false,
+      "spotTypes": ["漁港", "堤防", "磯", "サーフ"]
+    }
+  }
+}
