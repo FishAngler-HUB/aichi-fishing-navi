@@ -1,0 +1,10 @@
+{
+  "_comment": "画面右上『今の狙い目』の手動上書き（任意）。fish を空のままにすると、fish.json の旬＋catches.json の直近の釣果から自動表示します。上書きしたいときは下の例のように書きます。",
+  "_example": [
+    { "name": "アジ", "level": 5 },
+    { "name": "サバ", "level": 4 },
+    { "name": "タチウオ", "level": 3 }
+  ],
+  "updatedAt": "",
+  "fish": []
+}

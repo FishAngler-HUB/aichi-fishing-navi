@@ -1,0 +1,32 @@
+{
+  "name": "釣り情報ツール - 今日のおすすめ釣り場",
+  "short_name": "釣り情報ツール",
+  "description": "愛知県の釣り場から、今日おすすめの釣り場TOP5・今釣れている魚・天気・海況が分かるツール",
+  "lang": "ja",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#f0f4f8",
+  "theme_color": "#1e5f8c",
+  "icons": [
+    {
+      "src": "icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}

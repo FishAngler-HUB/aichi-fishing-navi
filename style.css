@@ -610,6 +610,25 @@ button:hover {
   background-color: #24713f;
 }
 
+/* サイトフッター（出典表記） */
+.site-footer {
+  max-width: 800px;
+  margin: 10px auto 30px;
+  padding: 16px 20px;
+  color: #6b7a86;
+  font-size: 12px;
+  line-height: 1.7;
+  border-top: 1px solid #dbe4ea;
+}
+
+.site-footer p {
+  margin: 4px 0;
+}
+
+.site-footer a {
+  color: #1e5f8c;
+}
+
 /* 釣果データの書き出し */
 .export-note {
   font-size: 13px;
