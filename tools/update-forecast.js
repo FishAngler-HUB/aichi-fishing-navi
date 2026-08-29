@@ -30,7 +30,6 @@ const path = require("node:path");
 const { spawnSync } = require("node:child_process");
 
 const ROOT = path.join(__dirname, "..");
-const LOG_PATH = path.join(__dirname, "fetch.log");
 const FORECAST_PATH = path.join(ROOT, "data", "forecast.json");
 const SPOTS_PATH = path.join(ROOT, "data", "spots.json");
 
@@ -47,23 +46,17 @@ function ts() {
   );
 }
 
+// ログは標準出力に書く。tools/run-update.bat が fetch.log へ追記（リダイレクト）する。
+// 手動実行（npm run update:forecast）では画面にそのまま表示される。
 function log(line) {
-  const msg = "[" + ts() + "] " + line;
-  console.log(msg);
-  try {
-    fs.appendFileSync(LOG_PATH, msg + "\n");
-  } catch (e) {
-    /* ログ書き込み失敗は無視 */
-  }
+  console.log("[" + ts() + "] " + line);
 }
 
 function logBlock(title, text) {
   if (!text) return;
   const body = String(text).trimEnd();
   if (!body) return;
-  try {
-    fs.appendFileSync(LOG_PATH, "----- " + title + " -----\n" + body + "\n");
-  } catch (e) {}
+  console.log("----- " + title + " -----");
   console.log(body);
 }
 
@@ -72,9 +65,6 @@ function finish(code, reason) {
     (code === 0 ? "完了" : "中止") +
     "（終了コード " + code + "）" + (reason ? " : " + reason : "")
   );
-  try {
-    fs.appendFileSync(LOG_PATH, "\n");
-  } catch (e) {}
   process.exit(code);
 }
 
@@ -227,9 +217,7 @@ function commitAndPush() {
 
 /* ---------- 実行 ---------- */
 
-try {
-  fs.appendFileSync(LOG_PATH, "===== " + ts() + " 自動更新 開始 =====\n");
-} catch (e) {}
+console.log("===== " + ts() + " 自動更新 開始 =====");
 log("自動更新を開始します（作業フォルダ: " + ROOT + "）");
 
 runFetch();

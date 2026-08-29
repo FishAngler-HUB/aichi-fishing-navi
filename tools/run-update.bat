@@ -1,20 +1,23 @@
 @echo off
-rem ============================================================
-rem  釣り情報ツール - 天気データ自動更新
-rem  タスクスケジューラからも、手動ダブルクリックからも使えます。
-rem  ログは同じフォルダの fetch.log に追記されます。
-rem ============================================================
+rem Wrapper for Windows Task Scheduler / manual double-click.
+rem ASCII-only and CRLF on purpose (Task Scheduler safe).
+rem All output is appended to tools\fetch.log .
 
-rem このバッチがある tools フォルダの 1つ上（プロジェクト直下）へ移動
+setlocal
+
+rem Move to the project root (folder above this "tools" folder).
 cd /d "%~dp0.."
 
-rem Node で更新スクリプトを実行
-node "tools\update-forecast.js"
-set EXITCODE=%ERRORLEVEL%
+set "LOG=%~dp0fetch.log"
+set "NODE=node"
+if not exist "%NODE%" if exist "%ProgramFiles%\nodejs\node.exe" set "NODE=%ProgramFiles%\nodejs\node.exe"
 
-rem Node 自体が起動できなかった場合の保険ログ
-if %EXITCODE% GEQ 1 (
-  echo [%date% %time%] run-update.bat: node terminated with exit code %EXITCODE% >> "%~dp0fetch.log"
-)
+>>"%LOG%" echo.
+>>"%LOG%" echo ===== %date% %time% run-update.bat start =====
+>>"%LOG%" echo cwd=%CD%
+>>"%LOG%" 2>&1 where node
+>>"%LOG%" 2>&1 "%NODE%" "tools\update-forecast.js"
+set "EC=%ERRORLEVEL%"
+>>"%LOG%" echo ===== end (exit %EC%) =====
 
-exit /b %EXITCODE%
+endlocal & exit /b %EC%
