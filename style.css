@@ -14,21 +14,20 @@ body {
 header {
   background-color: #1e5f8c;
   color: white;
-  padding: 16px 20px;
-  text-align: center;
-  position: relative;
+  padding: 12px 18px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px 14px;
 }
 
 header h1 {
   margin: 0;
-  font-size: 24px;
+  font-size: 22px;
+  text-align: left;
 }
 
 .back-btn {
-  position: absolute;
-  left: 15px;
-  top: 50%;
-  transform: translateY(-50%);
   background-color: rgba(255, 255, 255, 0.15);
   color: white;
   border: 1px solid rgba(255, 255, 255, 0.5);
@@ -36,6 +35,7 @@ header h1 {
   border-radius: 6px;
   font-size: 13px;
   cursor: pointer;
+  flex: 0 0 auto;
 }
 
 .back-btn:hover {
@@ -454,20 +454,19 @@ button:hover {
    スマホ表示を基準にし、広い画面で調整する
    ========================================================= */
 
-/* ヘッダー右上の「今の狙い目」お知らせ */
+/* ヘッダーの「今の狙い目」お知らせ（スマホでは下の行に回り込む） */
 .now-biting {
-  margin: 10px auto 0;
+  flex-basis: 100%;
+  margin: 2px 0 0;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  justify-content: center;
   gap: 6px 10px;
   font-size: 12px;
   background-color: rgba(255, 255, 255, 0.14);
   border: 1px solid rgba(255, 255, 255, 0.35);
   border-radius: 8px;
   padding: 6px 10px;
-  max-width: 92%;
 }
 
 .now-biting .nb-label {
@@ -653,13 +652,10 @@ button:hover {
 /* 広い画面 */
 @media (min-width: 700px) {
   .now-biting {
-    position: absolute;
-    right: 15px;
-    top: 50%;
-    transform: translateY(-50%);
-    margin: 0;
+    flex-basis: auto;
+    margin: 0 0 0 auto;
+    max-width: 56%;
     justify-content: flex-end;
-    max-width: 46%;
   }
 
   .osusume-btns button {
