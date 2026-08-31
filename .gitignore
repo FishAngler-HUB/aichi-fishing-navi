@@ -12,9 +12,22 @@ catches-export.json
 # ===== Node =====
 node_modules/
 
-# ===== 秘密情報（現在は未使用。予防的に除外） =====
+# ===== 秘密情報 =====
 .env
 .env.*
+tools/.env
+
+# ===== Google Drive 取得（rclone）=====
+# rclone 本体と認証設定は絶対に Git に入れない
+tools/rclone.exe
+tools/rclone
+rclone.conf
+# 取得途中の一時ファイル（data/reports/*.md 本体は Git 管理する）
+data/reports/.*.part
+data/reports/*.part
+# catches.json の安全書き込み用（*.tmp / *.bak は上でも除外済みだが明示）
+data/catches.json.tmp
+data/catches.json.bak
 
 # ===== OS / エディタ =====
 .DS_Store

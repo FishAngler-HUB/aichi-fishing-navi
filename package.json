@@ -7,6 +7,9 @@
   "scripts": {
     "fetch:forecast": "node tools/fetch-forecast.js",
     "update:forecast": "node tools/update-forecast.js",
+    "fetch:report": "node tools/fetch-drive-report.js",
+    "parse:report": "node tools/parse-report.js",
+    "update:catches": "node tools/update-catches.js",
     "dev": "node tools/dev-server.js"
   },
   "engines": {
