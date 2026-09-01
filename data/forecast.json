@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-01T21:00:02.373Z",
+  "generatedAt": "2026-09-01T21:02:26.477Z",
   "source": "Open-Meteo.com (CC BY 4.0)",
   "forecastDays": 3,
   "spots": {
@@ -1249,6 +1249,156 @@
           "wave": 1.22,
           "waveDir": 171,
           "sst": 27.6,
+          "pressure": 1008
+        }
+      ]
+    },
+    "33": {
+      "name": "大井漁港",
+      "days": [
+        {
+          "date": "2026-09-02",
+          "weatherCode": 3,
+          "tempMax": 28.3,
+          "tempMin": 26.1,
+          "precipProb": 79,
+          "precipSum": 0,
+          "windSpeed": 5.6,
+          "windGust": 9,
+          "windDir": 124,
+          "wave": 0.54,
+          "waveDir": 142,
+          "sst": 28.5,
+          "pressure": 1008
+        },
+        {
+          "date": "2026-09-03",
+          "weatherCode": 61,
+          "tempMax": 27.1,
+          "tempMin": 22.6,
+          "precipProb": 91,
+          "precipSum": 11.1,
+          "windSpeed": 5.7,
+          "windGust": 9.2,
+          "windDir": 92,
+          "wave": 0.38,
+          "waveDir": 155,
+          "sst": 28.4,
+          "pressure": 1004
+        },
+        {
+          "date": "2026-09-04",
+          "weatherCode": 65,
+          "tempMax": 23.7,
+          "tempMin": 21.3,
+          "precipProb": 90,
+          "precipSum": 91.1,
+          "windSpeed": 7.2,
+          "windGust": 7.1,
+          "windDir": 357,
+          "wave": 0.42,
+          "waveDir": 161,
+          "sst": 28.2,
+          "pressure": 1002
+        }
+      ]
+    },
+    "34": {
+      "name": "新舞子マリンパーク",
+      "days": [
+        {
+          "date": "2026-09-02",
+          "weatherCode": 51,
+          "tempMax": 30.2,
+          "tempMin": 24.6,
+          "precipProb": 84,
+          "precipSum": 0.1,
+          "windSpeed": 3.2,
+          "windGust": 11.4,
+          "windDir": 140,
+          "wave": 0.3,
+          "waveDir": 144,
+          "sst": 29.8,
+          "pressure": 1011
+        },
+        {
+          "date": "2026-09-03",
+          "weatherCode": 63,
+          "tempMax": 27.5,
+          "tempMin": 21.7,
+          "precipProb": 95,
+          "precipSum": 18.2,
+          "windSpeed": 5.6,
+          "windGust": 6.9,
+          "windDir": 83,
+          "wave": 0.14,
+          "waveDir": 151,
+          "sst": 29.7,
+          "pressure": 1008
+        },
+        {
+          "date": "2026-09-04",
+          "weatherCode": 65,
+          "tempMax": 23.2,
+          "tempMin": 20.7,
+          "precipProb": 88,
+          "precipSum": 111.2,
+          "windSpeed": 5.8,
+          "windGust": 5.9,
+          "windDir": 359,
+          "wave": 0.18,
+          "waveDir": 123,
+          "sst": 29.3,
+          "pressure": 1006
+        }
+      ]
+    },
+    "35": {
+      "name": "碧南緑地公園",
+      "days": [
+        {
+          "date": "2026-09-02",
+          "weatherCode": 3,
+          "tempMax": 29.6,
+          "tempMin": 25.4,
+          "precipProb": 84,
+          "precipSum": 0,
+          "windSpeed": 4.1,
+          "windGust": 11.4,
+          "windDir": 133,
+          "wave": 0.4,
+          "waveDir": 145,
+          "sst": 29.5,
+          "pressure": 1014
+        },
+        {
+          "date": "2026-09-03",
+          "weatherCode": 63,
+          "tempMax": 28.2,
+          "tempMin": 22.1,
+          "precipProb": 95,
+          "precipSum": 10,
+          "windSpeed": 5.6,
+          "windGust": 8.4,
+          "windDir": 94,
+          "wave": 0.24,
+          "waveDir": 160,
+          "sst": 29.4,
+          "pressure": 1010
+        },
+        {
+          "date": "2026-09-04",
+          "weatherCode": 65,
+          "tempMax": 22.9,
+          "tempMin": 21.1,
+          "precipProb": 88,
+          "precipSum": 98.6,
+          "windSpeed": 5.7,
+          "windGust": 5.9,
+          "windDir": 358,
+          "wave": 0.26,
+          "waveDir": 163,
+          "sst": 29.1,
           "pressure": 1008
         }
       ]
