@@ -25,6 +25,10 @@ rclone.conf
 # 取得途中の一時ファイル（data/reports/*.md 本体は Git 管理する）
 data/reports/.*.part
 data/reports/*.part
+
+# ===== NotebookLM クエリの生成物（レポート本体ではない作業用ファイル）=====
+data/reports/_notebooklm-answer-*.md
+tools/notebooklm-last-conversation.txt
 # catches.json の安全書き込み用（*.tmp / *.bak は上でも除外済みだが明示）
 data/catches.json.tmp
 data/catches.json.bak
@@ -34,3 +38,7 @@ data/catches.json.bak
 Thumbs.db
 desktop.ini
 .vscode/
+
+# ===== Python =====
+__pycache__/
+*.pyc
